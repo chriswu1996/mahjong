@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class Test{
+    
+    public static void main ( String[] args ) {
+
+        Checker c = new Checker();
+        int k = 0;
+            
+        Board b = new Board();
+        Player p = new Player( b );
+
+        p.next();
+        while ( ! p.hasWon() ) {
+            p.play();
+
+            // to test
+            k++;
+                
+            p.next();
+            p.arrange();
+            System.out.println( p.display());
+        }
+        
+        System.out.println( "WON!!!!" );
+
+
+        System.out.println( "Total cards played: " + k );
+    }
+}
